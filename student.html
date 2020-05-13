@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学生管理系统</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./student.css">
+</head>
+
+<body>
+    <div class="head">
+        <div class="logo">
+            <img src="./img/logo.png" alt="">
+            <div class="spa">
+                <span>学</span>
+                <span>生</span>
+                <span>管</span>
+                <span>理</span>
+            </div>
+            <div class="btn"></div>
+        </div>
+    </div>
+    <div class="content">
+        <div id="conLit" class="list">
+            <dl>
+                <dt>学生管理</dt>
+                <dd class="action">学生列表</dd>
+                <dd>新增学生</dd>
+                <dd>饼图展示</dd>
+            </dl>
+        </div>
+        <div id="conRit" class="right">
+            <div id="student-list" class="student actdic">
+                <!-- 搜素 -->
+                <div class="search">
+                    <input id="search-inp" type="text">
+                    <button id="search-btn">搜索</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>学号</td>
+                            <td>姓名</td>
+                            <td>性别</td>
+                            <td>邮箱</td>
+                            <td>年龄</td>
+                            <td>手机号</td>
+                            <td>住址</td>
+                            <td>操作</td>
+                        </tr>
+                    </thead>
+                    <tbody class="randStuList">
+                        <tr>
+                            <td>0001</td>
+                            <td>王佳怡</td>
+                            <td>女</td>
+                            <td>123456@qq.com</td>
+                            <td>18</td>
+                            <td>13838389527</td>
+                            <td>成都</td>
+                            <td>
+                                <button class="btn edx">编辑</button>
+                                <button class="btn del">删除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <div class="pageBtn">
+                    <button class="btn prevBtn">上一页</button>
+                    <button class="btn nextBtn">下一页</button>
+                </div> -->
+
+                <div class="pageWrapper">
+                    <!-- //页码插件 -->
+                </div>
+
+                <div class="addMask disNone">
+                    <div class="maskForm">
+                        <p>编辑信息</p>
+                        <form id="eidStudent">
+                            <div><label for="name">姓名</label><input name="name" type="text"></div>
+                            <div><label for="sex">性别</label>
+                                男<input type="radio" value="0" checked name="sex">
+                                女<input type="radio" value="1" name="sex">
+                            </div>
+                            <div><label for="sNo">学号</label><input name="sNo" readonly type="text"></div>
+                            <div><label for="email">邮箱</label><input name="email" type="email"></div>
+                            <div><label for="birth">出生年</label><input name="birth" type="text"></div>
+                            <div><label for="phone">手机号</label><input name="phone" type="text"></div>
+                            <div><label for="address">住址</label><input name="address" type="text"></div>
+                            <div class="btton">
+                                <input class="submit btn" type="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="student-add" class="addStu student actdic">
+                <form id="addNewStudent">
+                    <div><label for="name">姓名</label><input name="name" type="text"></div>
+                    <div><label for="sex">性别</label>
+                        男<input type="radio" value="0" checked name="sex">
+                        女<input type="radio" value="1" name="sex">
+                    </div>
+                    <div><label for="sNo">学号</label><input name="sNo" type="text"></div>
+                    <div><label for="email">邮箱</label><input name="email" type="email"></div>
+                    <div><label for="birth">出生年</label><input name="birth" type="text"></div>
+                    <div><label for="phone">手机号</label><input name="phone" type="text"></div>
+                    <div><label for="address">住址</label><input name="address" type="text"></div>
+                    <div class="btton">
+                        <input class="submit btn" type="submit">
+                        <input class="reset btn" type="reset">
+                    </div>
+                </form>
+            </div>
+            <div id="student-pie" class="contai student">
+                <div id="pieAdr" class="pie"></div>
+                <div id="pieSex" class="pie"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./jquery-3.4.1.js"></script>
+    <script src="./echarts.js"></script>
+    <script src="./pie-echa.js"></script>
+    <!-- <script src="./student.js"></script> -->
+    <script src="./turnPages.js"></script>
+    <script src="./JQstudent.js"></script>
+    <script>
+        
+    </script>
+</body>
+
+</html>

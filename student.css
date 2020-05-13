@@ -1,0 +1,456 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.head {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(90deg, #000, #ccc);
+}
+
+.head .logo {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.head .logo img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.head .logo .spa {
+    margin-left: 70px;
+}
+
+.head .logo .spa span {
+    font-size: 28px;
+    color: #fff;
+    height: 80px;
+    line-height: 80px;
+    display: inline-block;
+    margin: 0 7px;
+    font-weight: 700;
+    text-shadow: 5px 5px 3px #fff;
+}
+
+.head .logo .spa span:nth-of-type(1) {
+    animation: spaJump 0.4s linear infinite alternate;
+}
+
+.head .logo .spa span:nth-of-type(2) {
+    animation: spaJump 0.4s linear 0.2s infinite alternate;
+}
+
+.head .logo .spa span:nth-of-type(3) {
+    animation: spaJump 0.4s linear 0.3s infinite alternate;
+}
+
+.head .logo .spa span:nth-of-type(4) {
+    animation: spaJump 0.4s linear 0.4s infinite alternate;
+}
+
+@keyframes spaJump {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-28px);
+    }
+}
+
+
+
+@media screen and (max-width: 400px) {
+    .head .logo .spa {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .head .logo .btn {
+        width: 40px;
+        height: 10px;
+        cursor: pointer;
+        border-top: 5px solid;
+        border-bottom: 5px solid;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    .head .logo .btn:hover {
+        animation: btnRot 1s linear infinite;
+    }
+
+    @keyframes btnRot {
+        0% {
+            transform: translateY(-50%) rotateZ(0) scale(1);
+        }
+
+        25% {
+            transform: translateY(-50%) rotateZ(45deg) scale(1.2);
+        }
+
+        50% {
+            transform: translateY(-50%) rotateZ(0) scale(1);
+        }
+
+        75% {
+            transform: translateY(-50%) rotateZ(-45deg) scale(1.2);
+        }
+
+        100% {
+            transform: translateY(-50%) rotateZ(0) scale(1);
+        }
+    }
+}
+
+
+.content {
+    height: calc(100% - 80px);
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* 左边列表 */
+.content .list {
+    position: absolute;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(#000, #ccc);
+}
+
+.content .list dl {
+    font-size: 24px;
+    color: #fff;
+    width: 100%;
+}
+
+.content .list dl dt {
+    width: 100%;
+    height: 40px;
+    text-align: left;
+    line-height: 40px;
+    margin: 10px 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.content .list dl dd {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: right;
+    cursor: pointer;
+    position: relative;
+}
+
+.content .list dl .action::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 100%;
+    background: #ccc;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.3;
+    border-radius: 20px 0 0 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .content #conLit {
+        display: none;
+        width: 100%;
+        height: 200px;
+        z-index: 99;
+        background: linear-gradient(90deg,#000, #ccc);
+
+    }
+
+    .content #conLit dl {
+        font-size: 18px;
+    }
+
+    .content #conLit dl dt {
+        height: 30px;
+        line-height: 30px;
+        text-align: left;
+    }
+
+    .content #conLit dl dd {
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+    .content .list dl .action::after {
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 20px;
+    }
+    .content #conRit {
+        width: 100%;
+    }
+}
+
+/* 右边内容 */
+.content .right {
+    float: right;
+    width: calc(100% - 200px);
+    height: 100%;
+    text-align: left;
+    background-color: #eee;
+    position: relative;
+}
+
+
+.content .right div.actdic {
+    display: none;
+}
+
+.content .right .addStu {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -175px;
+    width: 300px;
+}
+
+.content .right .addStu form {
+    padding: 10px;
+
+}
+
+.content .right .addStu form div {
+    margin: 10px 0;
+    height: 30px;
+    line-height: 30px;
+}
+
+.content .right .addStu form div.btton {
+    padding-left: 50px;
+}
+
+.content .right .addStu form input {
+    border: 1px solid #ccc;
+    outline: none;
+    line-height: 30px;
+    border-radius: 4px;
+    padding-left: 4px;
+}
+
+.content .right .addStu form input.btn {
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #999;
+    margin: 0 10px;
+}
+
+.content .right .addStu label {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: right;
+    margin: 0 10px;
+}
+
+/* pie */
+.content .contai {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .contai .pie {
+    margin: 200px 10px 0 10px;
+    width: 500px;
+    height: 500px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+
+/* 右边列表 */
+.content .right .student {
+    width: 100%;
+}
+
+.content .right .student .search {
+    margin: 10px;
+}
+
+.content .right .student .search input {
+    width: 200px;
+    height: 35px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.content .right .student .search button {
+    width: 45px;
+    height: 35px;
+    outline: none;
+    border: 1px solid;
+    background-color: #354457;
+    color: #fff;
+    line-height: 35px;
+    border-radius: 7px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.content .right .student .pageBtn {
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.content .right .student .pageBtn .btn {
+    /* display: inline-block; */
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    background-color: #4d5e70;
+    color: #fff;
+    border: 1px solid;
+    outline: none;
+}
+
+.content .right .student table {
+    width: 100%;
+    text-align: center;
+}
+
+.content .right .student table thead {
+    font-size: 18px;
+    background-color: #e3e8ee;
+    font-weight: bold;
+}
+
+.content .right .student table thead tr {
+    height: 30px;
+}
+
+.content .right .student table tbody {
+    background-color: #fff;
+}
+
+.content .right .student table tbody .btn {
+    width: 60px;
+    height: 30px;
+    margin: 0 5px;
+    outline: none;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content .right .student table tbody .btn.edx {
+    background-color: #5cb85c;
+}
+
+.content .right .student table tbody .btn.del {
+    background-color: #d9534f;
+}
+
+/* 编辑弹出框 */
+.content .right .student .addMask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.content .right .student .addMask.disNone {
+    display: none;
+}
+
+.content .right .student .addMask .maskForm {
+    width: 500px;
+    height: 500px;
+    margin: 200px auto 0;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.content .right .student .addMask .maskForm p {
+    font-size: 16px;
+    color: #354457;
+    padding: 20px;
+}
+
+.content .right .student .addMask .maskForm form {
+    padding: 110px;
+    padding-top: 40px;
+}
+
+.content .right .student .addMask .maskForm div {
+    margin: 10px 0;
+    height: 30px;
+    line-height: 30px;
+}
+
+.content .right .student .addMask .maskForm div.btton {
+    padding-left: 35px;
+}
+
+.content .right .student .addMask .maskForm input {
+    border: 1px solid #ccc;
+    outline: none;
+    line-height: 30px;
+    border-radius: 4px;
+    padding-left: 4px;
+}
+
+.content .right .student .addMask .maskForm input.btn {
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #999;
+    margin: 0 10px;
+    margin-left: 70px;
+}
+
+.content .right .student .addMask .maskForm label {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: right;
+    margin: 0 10px;
+}
